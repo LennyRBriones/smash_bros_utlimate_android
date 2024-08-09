@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
             SmashCharactersTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Android",
+                        name = "Nombia",
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -33,7 +33,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
-        text = "Bemsos a la nombia",
+        text = "Bemsos a la $name",
         modifier = modifier
     )
 }
