@@ -1,7 +1,6 @@
 package com.lennrbriones.smashcharacters.data
 
 import com.lennrbriones.smashcharacters.model.CharactersModel
-import com.lennrbriones.smashcharacters.model.ListModel
 import com.lennrbriones.smashcharacters.model.SingleCharacterModel
 import com.lennrbriones.smashcharacters.utils.Constants.Companion.ENDPOINT
 import retrofit2.Response

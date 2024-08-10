@@ -53,13 +53,20 @@ android {
 
 dependencies {
 
+    // Retrofit
     implementation(libs.converter.gson)
-    
 
-
+    // Dagger Hilt
     implementation(libs.hilt.android)
-
     kapt(libs.hilt.compiler)
+
+    // Coil Svg
+    implementation(libs.coil.svg)
+
+    //Coil
+    implementation(libs.coil.compose)
+
+    //Default
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
