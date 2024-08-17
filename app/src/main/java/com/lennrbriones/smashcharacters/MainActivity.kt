@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import com.lennrbriones.smashcharacters.navigation.NavManager
 import com.lennrbriones.smashcharacters.ui.theme.SmashCharactersTheme
 import com.lennrbriones.smashcharacters.viewmodels.CharactersViewModel
 import com.lennrbriones.smashcharacters.views.HomeView
@@ -26,7 +27,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    HomeView(viewModel = viewModel)
+                    NavManager(viewModel)
                 }
             }
         }
