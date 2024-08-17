@@ -1,8 +1,8 @@
 package com.lennrbriones.smashcharacters.views
 
-import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -32,7 +32,7 @@ import com.lennrbriones.smashcharacters.viewmodels.CharactersViewModel
 fun HomeView(viewModel: CharactersViewModel, navController: NavController) {
     Scaffold(
         topBar = {
-            MainTopBar(title = "Testing UI", onClickBackButton = {}) {
+            MainTopBar(title = "Smash Bros Fighters", onClickBackButton = {}) {
                 navController.navigate("SearchCharacterView")
             }
         }
@@ -58,22 +58,22 @@ fun ContentHomeView(
             .background(Color(CUSTOM_BLACK))
     ) {
         if (isLoading) {
-            CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
+            Column(
+                modifier = Modifier.align(Alignment.Center),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                CircularProgressIndicator()
 
-            Spacer(modifier = Modifier.height(16.dp))
+                Spacer(modifier = Modifier.height(16.dp))
 
-            Text(text = stringResource(id = R.string.loading), color = Color.White)
-            
+                Text(text = stringResource(id = R.string.loading), color = Color.White)
+            }
         } else {
             LazyColumn {
                 items(characters) { item ->
                     CardCharacter(item) {
                         val mappedFighterNumber = mapFighterNumber(item.fighterNumber)
                         navController.navigate("CharacterView/${mappedFighterNumber}")
-                        Log.d(
-                            "Navigation",
-                            "Navigating to CharacterView with fighterNumber: ${item.fighterNumber}"
-                        )
                     }
                 }
             }

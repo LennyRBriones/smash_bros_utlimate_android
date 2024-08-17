@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">Smash Characters</string>
-    <string name="loading"> Please Wait (It may take a while due the server)</string>
+    <string name="loading"> Please wait (this may take a while due to the server).</string>
 </resources>
