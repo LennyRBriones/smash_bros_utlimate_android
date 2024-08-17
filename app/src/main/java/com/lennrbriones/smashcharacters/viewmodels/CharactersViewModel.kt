@@ -28,6 +28,8 @@ class CharactersViewModel @Inject constructor(private val repo: CharactersReposi
     var state by mutableStateOf(CharacterState())
         private set
 
+    private val _isLoading = MutableStateFlow(true)
+    val isLoading = _isLoading.asStateFlow()
 
     init {
         fetchCharacters()
@@ -35,6 +37,7 @@ class CharactersViewModel @Inject constructor(private val repo: CharactersReposi
 
     private fun fetchCharacters() {
         viewModelScope.launch {
+            _isLoading.value = true
             withContext(Dispatchers.IO) {
                 val response = repo.getCharacters()
                 val sortedCharacters = response?.sortedBy {
@@ -42,6 +45,7 @@ class CharactersViewModel @Inject constructor(private val repo: CharactersReposi
                 } ?: emptyList()
                 _characters.value = sortedCharacters
             }
+            _isLoading.value = false
         }
     }
 
@@ -52,6 +56,7 @@ class CharactersViewModel @Inject constructor(private val repo: CharactersReposi
 
     fun getCharacterByNumber(id: String) {
         viewModelScope.launch {
+            _isLoading.value = true
             withContext(Dispatchers.IO) {
                 val response = repo.getCharacterByNumber(id)
                 state = state.copy(
@@ -66,6 +71,7 @@ class CharactersViewModel @Inject constructor(private val repo: CharactersReposi
                     otherAppearances = response?.otherAppearances ?: emptyList()
                 )
             }
+            _isLoading.value = false
         }
     }
 
