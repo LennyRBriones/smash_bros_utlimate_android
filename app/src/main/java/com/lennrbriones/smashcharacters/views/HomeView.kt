@@ -67,6 +67,8 @@ fun ContentHomeView(
                 Spacer(modifier = Modifier.height(16.dp))
 
                 Text(text = stringResource(id = R.string.loading), color = Color.White)
+                Text(text = stringResource(id = R.string.loading_message), color = Color.White)
+
             }
         } else {
             LazyColumn {
