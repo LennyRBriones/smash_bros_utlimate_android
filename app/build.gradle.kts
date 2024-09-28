@@ -1,6 +1,12 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("com.google.dagger.hilt.android")
+    kotlin("kapt")
+
+    // Firebase
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
 }
 
 android {
@@ -51,6 +57,31 @@ android {
 
 dependencies {
 
+    //Retrofit
+    implementation(libs.converter.gson)
+
+    //Dagger Hilt
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+
+    //Coil Svg
+    implementation(libs.coil.svg)
+
+    //Coil
+    implementation(libs.coil.compose)
+
+    //NavController
+    implementation (libs.navigationCompose)
+
+
+    //Firabase
+    implementation(platform(libs.firebase.bom))
+
+    //noinspection UseTomlInstead
+    implementation("com.google.firebase:firebase-analytics")
+
+
+    //Default
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

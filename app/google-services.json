@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "969945120916",
+    "project_id": "smash-app-f1850",
+    "storage_bucket": "smash-app-f1850.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:969945120916:android:69751a0154c1d40e87f481",
+        "android_client_info": {
+          "package_name": "com.lennrbriones.smashcharacters"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjM5BBTyrbueX8utB5cJ--ywTCenApMQk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
